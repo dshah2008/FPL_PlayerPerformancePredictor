@@ -53,7 +53,6 @@ Data has been aggregated from the following source tables (total of 241 files):\
 \- Number of features used for modeling: 18\
 \
 **Observations**\
-\
 \- Target is very sparse (has many 0s)\
 <img src="images/Points distribution (before filter)1.JPG?raw=true"/>\
 \
