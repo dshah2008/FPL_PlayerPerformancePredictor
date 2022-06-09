@@ -49,10 +49,11 @@ Data has been aggregated from the following source tables (total of 241 files):\
 \- master_team_list.csv : Team ID and name mapping for each season in 1 file.\
 \- players_raw.csv : Contains player position information for each season = 6 files.\
 \
+\- The target is *bps* or *bonus points score*\
 \- Number of samples used for modeling: 57,170\
 \- Number of features used for modeling: 18\
 \
-**Observations**\
+**Key Observations**\
 Target is very sparse because of players who don't make appearances:\
 <img src="images/Points distribution (before filter)1.JPG?raw=true"/>\
 \
