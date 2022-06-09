@@ -59,7 +59,7 @@ Data has been aggregated from the following source tables (total of 241 files):\
 \- Target (after 0-50 filter)\
 <img src="images/Points distribution (after filter)1.JPG?raw=true"/>\
 \
-\- The filter eliminates samples as follows:\
+\The filter eliminates samples as follows:\
 \- Original data size: 119634\
 \- Samples after > 0 filter: 57655\
 \- Samples after < 50 filter: 57170\
