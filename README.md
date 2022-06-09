@@ -10,7 +10,9 @@ Predict the points accumulated by each player in the next 5 gameweeks of the Eng
 **Objective & Scope** \
 I have an immense passion for football and I'm eager to improve my understanding of the game with the help of Machine Learning. I'm looking to develop my skillset in Deep Learning and Forecasting, and eventually contribute towards the increasing use of AI in the multi-billion dollar football industry.\
 \
-With this project, over multiple cycles, I plan to develop state-of-the-art models that can accurately forecast player performance multiple timesteps into the future. In this first version, I have simplified the problem to predict the average of the points scored in the next five games. The prediction also only considers appearances that accumulate between 0 and 50 points. Although these are tight restrictions, they help us build a strong foundation while continuing to meet the overall objective.\
+With this project, over multiple cycles, I plan to develop state-of-the-art models that can accurately forecast player performance multiple timesteps into the future. In this first version, I have simplified the problem to predict the average of the points scored in the next five games.\
+\
+The prediction also only considers appearances that accumulate between 0 and 50 points. The 0 lower limit is applied because they mostly indicate that the player does not make an appearance. It filters out almost 50% of samples. From a business standpoint, we are not interested in predicting whether or not a player will make an appearance. This is mostly known prior to the game, based on preferred starting line-ups or injuries. The upper limit of 50 is applied only in this iteration to simplify the problem. It filters out less than 1% of samples so it isn't very significant.\
 \
 **Background & Data Source** \
 Football teams globally spend millions to analyze games and develop strategies using AI. Companies such as Opta help these football clubs collect and aggregate match data. A lot of their data is publicly available via the Fantasy Premier League game on [https://fantasy.premierleague.com/](https://fantasy.premierleague.com/). The data from this game is rich and clean enough to carry out analysis at many different levels. Several developers have also maintained GitHub repositories that scrape weekly match data weekly from the game's website. For this project, I have used the [https://github.com/vaastav/Fantasy-Premier-League](https://github.com/vaastav/Fantasy-Premier-League) repository as my data source. It contains several data tables including player performance data for every match played in the last 6 years, as well as data describing players, teams and fixtures.\
@@ -47,6 +49,9 @@ Data has been aggregated from the following source tables (total of 241 files):\
 \- master_team_list.csv : Team ID and name mapping for each season in 1 file.\
 \- players_raw.csv : Contains player position information for each season = 6 files.\
 \
+\- Number of samples used for modeling: 57,170\
+\- Number of features used for modeling: 18\
+\
 **Observations**\
 \- Target is very sparse (has many 0s)\
 <img src="images/Points distribution (before filter)1.JPG?raw=true"/>\
@@ -54,8 +59,12 @@ Data has been aggregated from the following source tables (total of 241 files):\
 \- Target (after 0-50 filter) is right skewed\
 <img src="images/Points distribution (after filter)1.JPG?raw=true"/>\
 \
+\- The filter eliminates samples as follows:\
+\- Original data size: 119634\
+\- Samples after > 0 filter: 57655\
+\- Samples after < 50 filter: 57170\
 \
-\- Several features are correlated with the Target (bps)\
+\- Several features are correlated with the target *bps*. *Influence* has the highest correlation of 0.81.\
 \
 <img src="images/correlation matrix1.JPG?raw=true"/>\
 \
