@@ -33,7 +33,7 @@ I am the sole contributor in this project. All the code in the repository has be
 **Acknowledgement** \
 For the data source, I have used a public respository owned by Vaastav Anand: [https://github.com/vaastav/Fantasy-Premier-League](https://github.com/vaastav/Fantasy-Premier-League).
 
-<br/><br/>
+<br/>
 
 ## B. Data and Design
 \
@@ -53,10 +53,11 @@ Data has been aggregated from the following source tables (total of 241 files):\
 \- Number of features used for modeling: 18\
 \
 **Observations**\
+\
 \- Target is very sparse (has many 0s)\
 <img src="images/Points distribution (before filter)1.JPG?raw=true"/>\
 \
-\- Target (after 0-50 filter) is right skewed\
+\- Target (after 0-50 filter)\
 <img src="images/Points distribution (after filter)1.JPG?raw=true"/>\
 \
 \- The filter eliminates samples as follows:\
