@@ -53,28 +53,28 @@ Data has been aggregated from the following source tables (total of 241 files):\
 \- Number of features used for modeling: 18\
 \
 **Observations**\
-\- Target is very sparse because of players who don't make appearances:\
+Target is very sparse because of players who don't make appearances:\
 <img src="images/Points distribution (before filter)1.JPG?raw=true"/>\
 \
-\- Target (after 0-50 filter)\
+Target (after 0-50 filter)\
 <img src="images/Points distribution (after filter)1.JPG?raw=true"/>\
 \
-\The filter eliminates samples as follows:\
+The filter eliminates samples as follows:\
 \- Original data size: 119634\
 \- Samples after > 0 filter: 57655\
 \- Samples after < 50 filter: 57170\
 \
-\- Several features are correlated with the target *bps*. *Influence* has the highest correlation of 0.81.\
+Several features are correlated with the target *bps*. *Influence* has the highest correlation of 0.81.\
 \
 <img src="images/correlation matrix1.JPG?raw=true"/>\
 \
 \
-\- Target distribution varies significantly based on Player Position\
+Target distribution varies significantly based on Player Position\
 \
 <img src="images/bps_position_boxplot.JPG?raw=true"/>\
 \
 \
-\- Target distribution varies significantly based on Team (best and worst team displayed)\
+Target distribution varies significantly based on Team (best and worst team displayed)\
 \
 <img src="images/bps_team_boxplot.JPG?raw=true"/>\
 <br/><br/>
