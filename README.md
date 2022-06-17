@@ -32,7 +32,6 @@ I am the sole contributor in this project. All the code in the repository has be
 \
 **Acknowledgement** \
 For the data source, I have used a public respository owned by Vaastav Anand: [https://github.com/vaastav/Fantasy-Premier-League](https://github.com/vaastav/Fantasy-Premier-League).
-
 <br/>
 
 ## B. Data and Design
@@ -78,7 +77,8 @@ Target distribution varies significantly based on Player Position:\
 Target distribution varies significantly based on Team (best and worst team displayed):\
 \
 <img src="images/bps_team_boxplot.JPG?raw=true"/>\
-<br/><br/>
+
+<br/>
 
 ## C. Implementation
 
@@ -134,7 +134,6 @@ Metrics: Mean Squared Error, Mean Absolute Error\
 Validation: After a holdout Train-Val-Test split, a rolling-window evaluation process is used where in the first iteration, the model tests on N-4 to N timesteps and Trains on 0 to N-5 timesteps. N is the total no. of timesteps. In the second iteration, model tests on N-9 to N-5 timesteps and trains on 0 to N-10 timesteps. This continues until all the test data has been evluated. For a single output model, the model tests on the average of N-4 to N timesteps.\
 \
 Tuning: The model is tuned with the help of Optuna's Random Sampler and Median Pruner
-
 <br/>
 
 ## D. Results and Next Steps
@@ -147,15 +146,13 @@ Tuning: The model is tuned with the help of Optuna's Random Sampler and Median P
 |     LSTM      |  0.0115   |  0.0859   |  0.0108  |  0.0817  |
 
 <br/>
-
 While the Random Forest has a lower Training error, it does overfit. On the unseen Test data, the LSTM model performs significantly better based on both Mean Squared Error and Mean Absolute Error.\
-\
 \
 Following is a comparison of actual and predicted values for the LSTM (most recent gameweek for 50 players).\
 \
 <img src="images/results1.png?raw=true"/>
 \
-While the predictions do help us project player performance, they are far from robust. Despite improving on the Random Forest, the LSTM model struggles to capture the overall variance in points, especially the outliers. With these results and the overall objective in mind, we propose the following next steps.
+While the predictions do help us project player performance, they are far from robust. Despite improving on the Random Forest, the LSTM model struggles to capture the variance in points, especially the outliers. With these results and the overall objective in mind, we propose the following next steps.
 
 ### Next Steps
 
