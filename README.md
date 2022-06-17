@@ -1,6 +1,6 @@
 # Player Performance Prediction in Soccer
 
-<br/><br/>
+<br/>
 
 ## A. Overview 
 \
@@ -135,7 +135,7 @@ Validation: After a holdout Train-Val-Test split, a rolling-window evaluation pr
 \
 Tuning: The model is tuned with the help of Optuna's Random Sampler and Median Pruner
 
-<br/><br/>
+<br/>
 
 ## D. Results and Next Steps
 
@@ -154,7 +154,8 @@ While the Random Forest has a lower Training error, it does overfit. On the unse
 Following is a comparison of actual and predicted values for the LSTM (most recent gameweek for 50 players).\
 \
 <img src="images/results1.png?raw=true"/>
-
+\
+While the predictions do help us project player performance, they are far from robust. Despite improving on the Random Forest, the LSTM model struggles to capture the overall variance in points, especially the outliers. With these results in mind, we propose the following next steps.
 
 ### Next Steps
 
@@ -162,4 +163,4 @@ Following is a comparison of actual and predicted values for the LSTM (most rece
 \- Additional data and features: Opponent history, team formations, player position breakdown, injury news\
 \- Improve encoding: use rolling average of points to encode *team* and *opponent* instead of just previous season totals\
 \- Remove data filters\
-\- Experiment with more models: LSTM with Attention head, Transformers, Neural Prophet
+\- Experiment with more Seq2Seq models: LSTM with Attention head, Transformers, Neural Prophet
